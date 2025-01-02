@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { act } from "react";
 
-const uiInitialState = { option: null, loaging: false, error: null };
+const uiInitialState = { option: null, loading: false, error: null };
 
 const uiSlice = createSlice({
   name: "ui",
@@ -8,6 +9,12 @@ const uiSlice = createSlice({
   reducers: {
     setOption(state, action) {
       state.option = action.payload;
+    },
+    setError(state, action) {
+      state.error = action.payload;
+    },
+    setLoading(state, action) {
+      state.loading = action.payload;
     },
   },
 });
