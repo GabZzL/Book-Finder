@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { act } from "react";
 
 const uiInitialState = { option: null, loading: false, error: null };
 

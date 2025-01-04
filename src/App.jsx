@@ -5,6 +5,7 @@ import Options from "./components/searchoptions/Options";
 import SearchBar from "./components/searchbar/SearchBar";
 import BooksList from "./components/books/BooksList";
 import BookDetails from "./components/bookdetails/BookDetails";
+import Modal from "./UI/Modal";
 import "./App.css";
 
 export default function App() {
@@ -30,6 +31,7 @@ export default function App() {
         <BooksList books={booksList} />
       ) : null}
       {selectedBook && <BookDetails />}
+      {error && <Modal open={error} />}
     </Layout>
   );
 }
