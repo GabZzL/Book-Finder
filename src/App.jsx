@@ -21,11 +21,6 @@ export default function App() {
       {!option && <Options />}
       {option && !selectedBook ? <SearchBar /> : null}
       {loading && <Loading text="Loading..." />}
-      {error && (
-        <p>
-          {error.title} {error.message}
-        </p>
-      )}
       {booksList.length > 0 && !selectedBook ? (
         <BooksList books={booksList} />
       ) : null}
