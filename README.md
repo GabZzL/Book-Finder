@@ -79,4 +79,4 @@ For any questions or feedback, feel free to reach out:
 
 ## Application Link
 
-- **Link**: [Book Finder](book-search-c4ee6.firebaseapp.com)
+- **Link**: [Book Finder](https://book-search-c4ee6.web.app)
