@@ -6,6 +6,7 @@ import SearchBar from "./components/searchbar/SearchBar";
 import BooksList from "./components/books/BooksList";
 import BookDetails from "./components/bookdetails/BookDetails";
 import Modal from "./UI/Modal";
+import Loading from "./UI/Loading";
 import "./App.css";
 
 export default function App() {
@@ -15,13 +16,11 @@ export default function App() {
   const loading = useSelector((state) => state.ui.loading);
   const error = useSelector((state) => state.ui.error);
 
-  console.log(booksList);
-
   return (
     <Layout>
       {!option && <Options />}
       {option && !selectedBook ? <SearchBar /> : null}
-      {loading && <p>Loading...</p>}
+      {loading && <Loading text="Loading..." />}
       {error && (
         <p>
           {error.title} {error.message}

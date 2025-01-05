@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import DOMPurify from "dompurify";
+import classes from "./bookdetails.module.css";
 
 export default function BookDetails() {
   const selectedBook = useSelector((state) => state.books.selectedBook);
@@ -26,40 +27,44 @@ export default function BookDetails() {
   }
 
   return (
-    <div className="book-details">
-      <h2 className="title">{title}</h2>
-      <h3 className="subtitle">{subtitle}</h3>
-      <img className="image" src={img} alt={`image-${selectedBook.id}`} />
-      <ul className="author">
-        <li className="author-title">Authors:</li>
+    <div className={classes.bookDetails}>
+      <h2 className={classes.title}>{title}</h2>
+      <h3 className={classes.subtitle}>{subtitle}</h3>
+      <img
+        className={classes.imagen}
+        src={img}
+        alt={`image-${selectedBook.id}`}
+      />
+      <ul className={classes.authors}>
+        <li className={classes["author-title"]}>Authors:</li>
         {authors.length > 0 ? (
           authors.map((author) => (
-            <li key={`${selectedBook.id}-${author}`} className="author-name">
-              {author}
+            <li key={`${selectedBook.id}-${author}`}>
+              <p className={classes["author-name"]}>{author}</p>
             </li>
           ))
         ) : (
-          <li key="undefined" className="author-name">
-            undefined
+          <li key="undefined">
+            <p className={classes["author-name"]}>Undefined</p>
           </li>
         )}
       </ul>
-      <p className="publisher">
+      <p className={classes.publisher}>
         <span>Publisher: </span>
         {publisher || "undefined"}
       </p>
-      <p className="published">
+      <p className={classes.published}>
         <span>Published: </span>
         {publishedDate}
       </p>
-      <p className="rating">
+      <p className={classes.rating}>
         <span>Average Rating: </span>
-        {averageRating}
+        {averageRating || "undefined"}
       </p>
-      <div className="description">
-        <p className="description-title">Book Description:</p>
+      <div className={classes.description}>
+        <p className={classes["description-title"]}>Book Description:</p>
         <p
-          className="description-content"
+          className={classes["description-content"]}
           dangerouslySetInnerHTML={{ __html: cleanDescription }}
         ></p>
       </div>

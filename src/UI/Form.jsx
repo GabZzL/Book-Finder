@@ -1,9 +1,12 @@
-export default function Form({ children, onSubmit }) {
+import Button from "./Button";
+import classes from './form.module.css'
+
+export default function Form({ children, onSubmit, text }) {
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} className={classes.form}>
       {children}
       <div className="actions">
-        <button>Submit</button>
+        <Button text={text}/>
       </div>
     </form>
   );

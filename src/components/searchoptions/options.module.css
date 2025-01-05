@@ -1,0 +1,11 @@
+.options {
+  box-sizing: content-box;
+}
+
+.options-title {
+  font-size: 1.5rem;
+}
+
+.options-actions {
+  margin: 1rem;
+}

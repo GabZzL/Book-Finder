@@ -19,16 +19,22 @@ export default function SearchBar() {
 
   if (option === "ISBN") {
     return (
-      <Form onSubmit={handleSubmit}>
-        <input type="text" name="isbn" placeholder="ISBN" required />
+      <Form onSubmit={handleSubmit} text="Submit">
+        <div>
+          <input type="text" name="isbn" placeholder="ISBN" required />
+        </div>
       </Form>
     );
   }
 
   return (
-    <Form onSubmit={handleSubmit}>
-      <input type="text" name="title" placeholder="Title" required />
-      <input type="text" name="author" placeholder="Author" required />
+    <Form onSubmit={handleSubmit} text="Submit">
+      <div>
+        <input type="text" name="title" placeholder="Title" required />
+      </div>
+      <div>
+        <input type="text" name="author" placeholder="Author" required />
+      </div>
     </Form>
   );
 }

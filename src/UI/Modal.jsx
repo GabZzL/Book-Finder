@@ -2,6 +2,8 @@ import { useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { useDispatch } from "react-redux";
 import { uiActions } from "../store/ui";
+import Button from "./Button";
+import classes from "./modal.module.css";
 
 export default function Modal({ open }) {
   const dispatch = useDispatch();
@@ -20,10 +22,10 @@ export default function Modal({ open }) {
   }
 
   return createPortal(
-    <dialog ref={dialog} onClose={onCloseModal}>
+    <dialog className={classes.modal} ref={dialog} onClose={onCloseModal}>
       <h2>{open.title}</h2>
       <p>{open.message}</p>
-      <button onClick={onCloseModal}>Ok</button>
+      <Button onClick={onCloseModal} text="Ok" />
     </dialog>,
     document.getElementById("modal")
   );
